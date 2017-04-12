@@ -70,7 +70,7 @@ class NettyUtil {
                     LOGGER.info("Found Netty's native epoll transport in the classpath, "
                             + "but NIO was forced through the FORCE_NIO system property.");
                 } else if (!System.getProperty("os.name", "").toLowerCase(Locale.US).equals("linux")) {
-                    LOGGER.warn("Found Netty's native epoll transport, but not running on linux-based operating " +
+                    LOGGER.warn("Found Netty's native epoll transport, but not running on non linux-based operating " +
                             "system. Using NIO instead.");
                 } else if (!(Boolean) epoll.getMethod("isAvailable").invoke(null)) {
                     LOGGER.warn("Found Netty's native epoll transport in the classpath, but epoll is not available. "
